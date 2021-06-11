@@ -1,0 +1,45 @@
+Build the service
+-----------------
+Open cmd prompt
+cd to the service folder (\employee-service)
+run mvnw clean install
+
+Run the service
+----------------
+cd to \employee-service\target
+run java -Dserver.port=PORT_TO_RUN_ON -jar employee-service-0.0.1-SNAPSHOT.jar
+
+The service would have started at port {PORT_TO_RUN_ON}
+
+API's
+------
+1. Create new Employee 
+Method : POST
+Url    : http://{IP_ADDRESS}:{PORT_TO_RUN_ON}/employees
+Request Body:
+	{
+      "name": "Michael Stone",
+      "office": "321b",
+      "email" : "michael.stone@oscorp.com",
+      "phone" : "415.331.3321",
+      "role" : "Teir 3 Support Engineer"
+    }
+2. Retrieve all employees 
+Method : GET
+Url    : http://{IP_ADDRESS}:{PORT_TO_RUN_ON}/employees
+
+3. Retrieve an Employee based on id
+Method : GET
+Url    : http://{IP_ADDRESS}:{PORT_TO_RUN_ON}/employees/{id}
+
+4. Update an existing employee
+Method : PUT
+Url    : http://{IP_ADDRESS}:{PORT_TO_RUN_ON}/employees/{id}
+
+5. DELETE an Employee based on id
+Method : DELETE
+Url    : http://{IP_ADDRESS}:{PORT_TO_RUN_ON}/employees/{id}
+
+5. DELETE all Employees
+Method : DELETE
+Url    : http://{IP_ADDRESS}:{PORT_TO_RUN_ON}/employees
